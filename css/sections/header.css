@@ -1,0 +1,126 @@
+/* ==========================================================================
+   SEÇÃO: HEADER & NAVEGAÇÃO
+   Cabeçalho fixo, logo, menu responsivo e toggle mobile
+   ========================================================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border-subtle);
+  z-index: var(--z-header);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* --- Logo --- */
+.logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.logo-accent {
+  color: var(--color-accent);
+}
+
+/* --- Botão Menu Mobile (Hambúrguer) --- */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: var(--space-2);
+  gap: 5px;
+  border-radius: var(--radius-sm);
+}
+
+.nav-toggle-bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  border-radius: 2px;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+/* Estado ativo do botão hambúrguer */
+.nav-toggle.is-active .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-active .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-active .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Menu de Navegação --- */
+.nav-menu {
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-6) var(--space-4);
+  display: none;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-lg);
+}
+
+.nav-menu.is-active {
+  display: flex;
+}
+
+.nav-link {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+  padding-block: var(--space-2);
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+/* --- Breakpoint Desktop (>= 768px) --- */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-8);
+    background-color: transparent;
+    border-bottom: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .nav-link {
+    padding-block: 0;
+  }
+}

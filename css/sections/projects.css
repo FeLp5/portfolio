@@ -1,0 +1,86 @@
+/* ==========================================================================
+   SEÇÃO: PROJETOS
+   Grid de projetos, cards com imagem/placeholder, tags e links de ação
+   ========================================================================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-image-wrapper img {
+  transform: scale(1.03);
+}
+
+.project-image-wrapper .image-placeholder {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: var(--space-6);
+  gap: var(--space-4);
+}
+
+.project-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.project-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-base);
+  flex-grow: 1;
+}
+
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* --- Breakpoints Tablet e Desktop --- */
+@media (min-width: 640px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}

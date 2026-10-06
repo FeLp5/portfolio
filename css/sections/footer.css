@@ -1,0 +1,71 @@
+/* ==========================================================================
+   SEÇÃO: FOOTER
+   Rodapé com créditos, links sociais e copyright
+   ========================================================================== */
+
+.footer {
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-12);
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  text-align: center;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.footer-tagline {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.footer-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+.footer-social-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footer-social-link:hover {
+  color: var(--color-accent);
+}
+
+.footer-copyright {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* --- Breakpoint Desktop (>= 768px) --- */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .footer-brand {
+    align-items: flex-start;
+  }
+}

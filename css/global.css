@@ -1,0 +1,122 @@
+/* ==========================================================================
+   ESTILOS GLOBAIS
+   Configuração base de tipografia, layout e utilitários semânticos
+   ========================================================================== */
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  line-height: var(--line-height-base);
+  overflow-x: hidden;
+}
+
+/* --- Acessibilidade: Foco visível no teclado --- */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Link para pular navegação (Leitores de tela e teclado) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-4);
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+  padding: var(--space-2) var(--space-4);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-sm);
+  z-index: var(--z-modal);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* Elemento visível apenas para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* --- Container e Layout de Seção --- */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.section {
+  padding-block: var(--space-16);
+}
+
+.section-alt {
+  background-color: var(--color-bg-secondary);
+}
+
+/* Cabeçalho padrão de cada seção */
+.section-header {
+  margin-bottom: var(--space-12);
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+
+.section-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+}
+
+.section-description {
+  margin-top: var(--space-3);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+/* --- Ajustes Responsivos Globais --- */
+@media (min-width: 768px) {
+  :root {
+    --container-padding: var(--space-6);
+  }
+
+  .section {
+    padding-block: var(--space-20);
+  }
+
+  .section-title {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: var(--space-8);
+  }
+
+  .section {
+    padding-block: var(--space-24);
+  }
+}

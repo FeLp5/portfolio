@@ -1,0 +1,71 @@
+/* ==========================================================================
+   SEÇÃO: SOBRE
+   Biografia, área para texto descritivo e cartões de informações resumidas
+   ========================================================================== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+}
+
+.about-text p strong {
+  color: var(--color-text-primary);
+}
+
+/* --- Cartões de Informações Resumidas --- */
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.about-highlight-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.about-highlight-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-semibold);
+}
+
+.about-highlight-value {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* --- Breakpoint Desktop (>= 768px) --- */
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .about-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-text {
+    font-size: var(--font-size-lg);
+  }
+}

@@ -1,0 +1,73 @@
+/* ==========================================================================
+   SEÇÃO: CONTATO
+   Grid com informações de contato direto e formulário visual acessível
+   ========================================================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+/* Informações diretas (e-mail, redes, etc.) */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contact-info-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.contact-info-text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contact-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.contact-detail-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--font-weight-semibold);
+}
+
+.contact-detail-value {
+  font-size: var(--font-size-base);
+  color: var(--color-accent);
+}
+
+/* Formulário visual */
+.contact-form {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+}
+
+/* --- Breakpoint Desktop (>= 768px) --- */
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+}

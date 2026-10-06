@@ -1,0 +1,97 @@
+/* ==========================================================================
+   SEÇÃO: EXPERIÊNCIA
+   Linha do tempo / lista cronológica de experiências profissionais
+   ========================================================================== */
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: relative;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+/* Linha vertical conectora */
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 15px;
+  width: 2px;
+  background-color: var(--color-border);
+}
+
+.experience-item {
+  position: relative;
+  padding-left: var(--space-12);
+}
+
+/* Marcador visual (bullet) */
+.experience-marker {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-primary);
+  border: 3px solid var(--color-accent);
+  transform: translateX(-50%);
+  z-index: var(--z-base);
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: border-color var(--transition-fast);
+}
+
+.experience-card:hover {
+  border-color: var(--color-accent);
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.experience-role {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.experience-company {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent);
+}
+
+.experience-period {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+}
+
+.experience-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* --- Breakpoint Desktop --- */
+@media (min-width: 768px) {
+  .experience-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
